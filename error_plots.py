@@ -11,33 +11,33 @@ for minplanets, maxplanets in nplanets:
 	f5pfit_yes_per = [star["per_mid_5p"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrm_yes_per = [star["per_err_minus_5p"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrp_yes_per = [star["per_err_plus_5p"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#5p_yes_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_yes_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5p_yes_k = [star["K"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5pfit_yes_k = [star["K_mid_5p"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrm_yes_k = [star["K_err_minus_5p"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrp_yes_k = [star["K_err_plus_5p"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#5p_yes_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_yes_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5p_no_per = [star["per"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5pfit_no_per = [star["per_mid_5p"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrm_no_per = [star["per_err_minus_5p"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrp_no_per = [star["per_err_plus_5p"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#5p_no_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_no_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5p_no_k= [star["K"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5pfit_no_k = [star["K_mid_5p"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrm_no_k = [star["K_err_minus_5p"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5perrp_no_k = [star["K_err_plus_5p"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#5p_no_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5p_mar_per = [star["per"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5pfit_mar_per = [star["per_mid_5p"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5perrm_mar_per = [star["per_err_minus_5p"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5perrp_mar_per = [star["per_err_plus_5p"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#5p_mar_a = [star["a"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5p_mar_k = [star["K"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5pfit_mar_k = [star["K_mid_5p"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5perrm_mar_k = [star["K_err_minus_5p"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5perrp_mar_k = [star["K_err_plus_5p"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#5p_mar_mass = [star["PlanetMass"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	'''
+	f5p_no_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_per = [star["per"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5pfit_mar_per = [star["per_mid_5p"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5perrm_mar_per = [star["per_err_minus_5p"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5perrp_mar_per = [star["per_err_plus_5p"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_k = [star["K"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5pfit_mar_k = [star["K_mid_5p"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5perrm_mar_k = [star["K_err_minus_5p"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5perrp_mar_k = [star["K_err_plus_5p"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	
 	fig, f5pam = plt.subplots()
 	f5pam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	f5pam.scatter(f5p_yes_a, f5p_yes_mass, label="Recovered", color="#AAAAFF")
@@ -53,7 +53,7 @@ for minplanets, maxplanets in nplanets:
 	f5pam.set_title("Fitting: Period, K, Time of Conjunction, Ecc (max 0.5) ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	f5pam.legend(loc=2)
 	filename = "5pam_error_" + str(minplanets) + str(maxplanets) + ".png"
-	plt.savefig(filename)'''
+	plt.savefig(filename)
 	
 	fig, f5ppk = plt.subplots()
 	f5ppk.scatter(stars["per"], stars["K"], color="gray", s=1)
@@ -72,39 +72,39 @@ for minplanets, maxplanets in nplanets:
 	f5ppk.set_title("Fitting: Period, K, Time of Conjunction, Ecc (max 0.5) ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	f5ppk.legend(loc=2)
 	filename = "5ppk_error_" + str(minplanets) + str(maxplanets) + ".png"
-	#plt.savefig(filename)
+	plt.savefig(filename)
 	
 	ep_yes_per = [star["per"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	epfit_yes_per = [star["per_mid_ep"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrm_yes_per = [star["per_err_minus_ep"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrp_yes_per = [star["per_err_plus_ep"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#ep_yes_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_yes_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	ep_yes_k = [star["K"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	epfit_yes_k = [star["K_mid_ep"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrm_yes_k = [star["K_err_minus_ep"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrp_yes_k = [star["K_err_plus_ep"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#ep_yes_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_yes_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	ep_no_per = [star["per"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	epfit_no_per = [star["per_mid_ep"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrm_no_per = [star["per_err_minus_ep"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrp_no_per = [star["per_err_plus_ep"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#ep_no_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_no_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	ep_no_k= [star["K"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	epfit_no_k = [star["K_mid_ep"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrm_no_k = [star["K_err_minus_ep"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	eperrp_no_k = [star["K_err_plus_ep"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#ep_no_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	ep_mar_per = [star["per"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	epfit_mar_per = [star["per_mid_ep"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	eperrm_mar_per = [star["per_err_minus_ep"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	eperrp_mar_per = [star["per_err_plus_ep"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#ep_mar_a = [star["a"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	ep_mar_k = [star["K"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	epfit_mar_k = [star["K_mid_ep"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	eperrm_mar_k = [star["K_err_minus_ep"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	eperrp_mar_k = [star["K_err_plus_ep"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#ep_mar_mass = [star["PlanetMass"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	'''
+	ep_no_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_per = [star["per"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	epfit_mar_per = [star["per_mid_ep"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	eperrm_mar_per = [star["per_err_minus_ep"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	eperrp_mar_per = [star["per_err_plus_ep"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_k = [star["K"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	epfit_mar_k = [star["K_mid_ep"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	eperrm_mar_k = [star["K_err_minus_ep"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	eperrp_mar_k = [star["K_err_plus_ep"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	
 	fig, epam = plt.subplots()
 	epam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	epam.scatter(ep_yes_a, ep_yes_mass, label="Recovered", color="#AAAAFF")
@@ -120,7 +120,7 @@ for minplanets, maxplanets in nplanets:
 	epam.set_title("Fitting: Period, K, Time of Conjunction ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	epam.legend(loc=2)
 	filename = "epam_error_" + str(minplanets) + str(maxplanets) + ".png"
-	plt.savefig(filename)'''
+	plt.savefig(filename)
 	
 	fig, eppk = plt.subplots()
 	eppk.scatter(stars["per"], stars["K"], color="gray", s=1)
@@ -139,39 +139,39 @@ for minplanets, maxplanets in nplanets:
 	eppk.set_title("Fitting: Period, K, Time of Conjunction ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	eppk.legend(loc=2)
 	filename = "eppk_error_" + str(minplanets) + str(maxplanets) + ".png"
-	#plt.savefig(filename)
+	plt.savefig(filename)
 	
 	fp_yes_per = [star["per"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fpfit_yes_per = [star["per_mid_fp"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrm_yes_per = [star["per_err_minus_fp"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrp_yes_per = [star["per_err_plus_fp"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#fp_yes_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_yes_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fp_yes_k = [star["K"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fpfit_yes_k = [star["K_mid_fp"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrm_yes_k = [star["K_err_minus_fp"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrp_yes_k = [star["K_err_plus_fp"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#fp_yes_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_yes_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fp_no_per = [star["per"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fpfit_no_per = [star["per_mid_fp"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrm_no_per = [star["per_err_minus_fp"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrp_no_per = [star["per_err_plus_fp"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#fp_no_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_no_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fp_no_k= [star["K"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fpfit_no_k = [star["K_mid_fp"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrm_no_k = [star["K_err_minus_fp"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fperrp_no_k = [star["K_err_plus_fp"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#fp_no_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fp_mar_per = [star["per"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fpfit_mar_per = [star["per_mid_fp"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fperrm_mar_per = [star["per_err_minus_fp"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fperrp_mar_per = [star["per_err_plus_fp"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#fp_mar_a = [star["a"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fp_mar_k = [star["K"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fpfit_mar_k = [star["K_mid_fp"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fperrm_mar_k = [star["K_err_minus_fp"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fperrp_mar_k = [star["K_err_plus_fp"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#fp_mar_mass = [star["PlanetMass"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	'''
+	fp_no_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_per = [star["per"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fpfit_mar_per = [star["per_mid_fp"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fperrm_mar_per = [star["per_err_minus_fp"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fperrp_mar_per = [star["per_err_plus_fp"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_k = [star["K"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fpfit_mar_k = [star["K_mid_fp"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fperrm_mar_k = [star["K_err_minus_fp"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fperrp_mar_k = [star["K_err_plus_fp"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	
 	fig, fpam = plt.subplots()
 	fpam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	fpam.scatter(fp_yes_a, fp_yes_mass, label="Recovered", color="#AAAAFF")
@@ -187,7 +187,7 @@ for minplanets, maxplanets in nplanets:
 	fpam.set_title("Fitting: Period, K, Time of Conjunction, Ecc ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	fpam.legend(loc=2)
 	filename = "fpam_error_" + str(minplanets) + str(maxplanets) + ".png"
-	plt.savefig(filename)'''
+	plt.savefig(filename)
 	
 	fig, fppk = plt.subplots()
 	fppk.scatter(stars["per"], stars["K"], color="gray", s=1)
@@ -206,39 +206,39 @@ for minplanets, maxplanets in nplanets:
 	fppk.set_title("Fitting: Period, K, Time of Conjunction, Ecc ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	fppk.legend(loc=2)
 	filename = "fppk_error_" + str(minplanets) + str(maxplanets) + ".png"
-	#plt.savefig(filename)
+	plt.savefig(filename)
 	
 	np_yes_per = [star["per"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	npfit_yes_per = [star["per_mid_np"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrm_yes_per = [star["per_err_minus_np"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrp_yes_per = [star["per_err_plus_np"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#np_yes_a = [star["a"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_yes_a = [star["a"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	np_yes_k = [star["K"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	npfit_yes_k = [star["K_mid_np"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrm_yes_k = [star["K_err_minus_np"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrp_yes_k = [star["K_err_plus_np"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#np_yes_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_yes_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	np_no_per = [star["per"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	npfit_no_per = [star["per_mid_np"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrm_no_per = [star["per_err_minus_np"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrp_no_per = [star["per_err_plus_np"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#np_no_a = [star["a"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_no_a = [star["a"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	np_no_k= [star["K"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	npfit_no_k = [star["K_mid_np"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrm_no_k = [star["K_err_minus_np"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nperrp_no_k = [star["K_err_plus_np"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#np_no_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	np_mar_per = [star["per"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	npfit_mar_per = [star["per_mid_np"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nperrm_mar_per = [star["per_err_minus_np"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nperrp_mar_per = [star["per_err_plus_np"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#np_mar_a = [star["a"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	np_mar_k = [star["K"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	npfit_mar_k = [star["K_mid_np"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nperrm_mar_k = [star["K_err_minus_np"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nperrp_mar_k = [star["K_err_plus_np"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	#np_mar_mass = [star["PlanetMass"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	'''
+	np_no_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_per = [star["per"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	npfit_mar_per = [star["per_mid_np"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nperrm_mar_per = [star["per_err_minus_np"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nperrp_mar_per = [star["per_err_plus_np"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_a = [star["a"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_k = [star["K"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	npfit_mar_k = [star["K_mid_np"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nperrm_mar_k = [star["K_err_minus_np"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nperrp_mar_k = [star["K_err_plus_np"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	
 	fig, npam = plt.subplots()
 	npam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	npam.scatter(np_yes_a, np_yes_mass, label="Recovered", color="#AAAAFF")
@@ -254,7 +254,7 @@ for minplanets, maxplanets in nplanets:
 	npam.set_title("Fitting: Period, K, Time of Conjunction; eccentricity set to 0 ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	npam.legend(loc=2)
 	filename = "npam_error_" + str(minplanets) + str(maxplanets) + ".png"
-	plt.savefig(filename)'''
+	plt.savefig(filename)
 	
 	fig, nppk = plt.subplots()
 	nppk.scatter(stars["per"], stars["K"], color="gray", s=1)
@@ -273,5 +273,5 @@ for minplanets, maxplanets in nplanets:
 	nppk.set_title("Fitting: Period, K, Time of Conjunction; eccentricity set to 0 ("+str(minplanets)+"-"+str(maxplanets)+" planet systems)")
 	nppk.legend(loc=2)
 	filename = "nppk_error_" + str(minplanets) + str(maxplanets) + ".png"
-	#plt.savefig(filename)
+	plt.savefig(filename)
 	
