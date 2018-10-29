@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 stars = np.genfromtxt("planetfits_revised.csv", delimiter=",", names=True, dtype=None)
-#nplanets = [(1,3), (1,4), (4,4)]
-nplanets = [(1,6), (5,6), (5,5), (6,6)]
+nplanets = [(1,3), (1,4), (4,4)]
+#nplanets = [(1,6), (5,6), (5,5), (6,6)]
 # iterate over: [5,e,f,n][n,p] fits, and 1-3, 4, 5, 6, 1-4, 5-6, 1-6 planet systems?
 for minplanets, maxplanets in nplanets:
 	np_yes_per = [star["per"] for star in stars if ((star["np_Favored"] == b"Yes") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
@@ -14,10 +14,10 @@ for minplanets, maxplanets in nplanets:
 	np_no_a = [star["a"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	np_no_k= [star["K"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	np_no_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	np_mar_per = [star["per"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	np_mar_a = [star["a"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	np_mar_k = [star["K"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	np_mar_mass = [star["PlanetMass"] for star in stars if (((star["np_Favored"] == b"No*") or (star["np_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_per = [star["per"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_a = [star["a"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_k = [star["K"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	np_mar_mass = [star["PlanetMass"] for star in stars if ((star["np_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, npam = plt.subplots()
 	npam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	npam.scatter(np_yes_a, np_yes_mass, label="Recovered", color="blue")
@@ -62,10 +62,10 @@ for minplanets, maxplanets in nplanets:
 	ep_no_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	ep_no_k= [star["K"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	ep_no_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	ep_mar_per = [star["per"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	ep_mar_a = [star["a"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	ep_mar_k = [star["K"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	ep_mar_mass = [star["PlanetMass"] for star in stars if (((star["ep_Favored"] == b"No*") or (star["ep_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_per = [star["per"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_a = [star["a"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_k = [star["K"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	ep_mar_mass = [star["PlanetMass"] for star in stars if ((star["ep_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, epam = plt.subplots()
 	epam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	epam.scatter(ep_yes_a, ep_yes_mass, label="Recovered", color="blue")
@@ -110,10 +110,10 @@ for minplanets, maxplanets in nplanets:
 	f5p_no_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5p_no_k= [star["K"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5p_no_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5p_mar_per = [star["per"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5p_mar_a = [star["a"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5p_mar_k = [star["K"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5p_mar_mass = [star["PlanetMass"] for star in stars if (((star["5p_Favored"] == b"No*") or (star["5p_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_per = [star["per"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_a = [star["a"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_k = [star["K"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5p_mar_mass = [star["PlanetMass"] for star in stars if ((star["5p_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, f5pam = plt.subplots()
 	f5pam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	f5pam.scatter(f5p_yes_a, f5p_yes_mass, label="Recovered", color="blue")
@@ -157,10 +157,10 @@ for minplanets, maxplanets in nplanets:
 	fp_no_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fp_no_k= [star["K"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fp_no_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fp_mar_per = [star["per"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fp_mar_a = [star["a"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fp_mar_k = [star["K"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fp_mar_mass = [star["PlanetMass"] for star in stars if (((star["fp_Favored"] == b"No*") or (star["fp_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_per = [star["per"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_a = [star["a"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_k = [star["K"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fp_mar_mass = [star["PlanetMass"] for star in stars if ((star["fp_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, fpam = plt.subplots()
 	fpam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	fpam.scatter(fp_yes_a, fp_yes_mass, label="Recovered", color="blue")

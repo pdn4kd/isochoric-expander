@@ -14,10 +14,10 @@ for minplanets, maxplanets in nplanets:
 	nn_no_a = [star["a"] for star in stars if ((star["nn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nn_no_k= [star["K"] for star in stars if ((star["nn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	nn_no_mass = [star["PlanetMass"] for star in stars if ((star["nn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nn_mar_per = [star["per"] for star in stars if (((star["nn_Favored"] == b"No*") or (star["nn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nn_mar_a = [star["a"] for star in stars if (((star["nn_Favored"] == b"No*") or (star["nn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nn_mar_k = [star["K"] for star in stars if (((star["nn_Favored"] == b"No*") or (star["nn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	nn_mar_mass = [star["PlanetMass"] for star in stars if (((star["nn_Favored"] == b"No*") or (star["nn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nn_mar_per = [star["per"] for star in stars if ((star["nn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nn_mar_a = [star["a"] for star in stars if ((star["nn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nn_mar_k = [star["K"] for star in stars if ((star["nn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	nn_mar_mass = [star["PlanetMass"] for star in stars if ((star["nn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, nnam = plt.subplots()
 	nnam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	nnam.scatter(nn_yes_a, nn_yes_mass, label="Recovered", color="blue")
@@ -62,10 +62,10 @@ for minplanets, maxplanets in nplanets:
 	en_no_a = [star["a"] for star in stars if ((star["en_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	en_no_k= [star["K"] for star in stars if ((star["en_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	en_no_mass = [star["PlanetMass"] for star in stars if ((star["en_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	en_mar_per = [star["per"] for star in stars if (((star["en_Favored"] == b"No*") or (star["en_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	en_mar_a = [star["a"] for star in stars if (((star["en_Favored"] == b"No*") or (star["en_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	en_mar_k = [star["K"] for star in stars if (((star["en_Favored"] == b"No*") or (star["en_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	en_mar_mass = [star["PlanetMass"] for star in stars if (((star["en_Favored"] == b"No*") or (star["en_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	en_mar_per = [star["per"] for star in stars if ((star["en_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	en_mar_a = [star["a"] for star in stars if ((star["en_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	en_mar_k = [star["K"] for star in stars if ((star["en_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	en_mar_mass = [star["PlanetMass"] for star in stars if ((star["en_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, enam = plt.subplots()
 	enam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	enam.scatter(en_yes_a, en_yes_mass, label="Recovered", color="blue")
@@ -110,10 +110,10 @@ for minplanets, maxplanets in nplanets:
 	f5n_no_a = [star["a"] for star in stars if ((star["5n_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5n_no_k= [star["K"] for star in stars if ((star["5n_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	f5n_no_mass = [star["PlanetMass"] for star in stars if ((star["5n_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5n_mar_per = [star["per"] for star in stars if (((star["5n_Favored"] == b"No*") or (star["5n_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5n_mar_a = [star["a"] for star in stars if (((star["5n_Favored"] == b"No*") or (star["5n_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5n_mar_k = [star["K"] for star in stars if (((star["5n_Favored"] == b"No*") or (star["5n_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	f5n_mar_mass = [star["PlanetMass"] for star in stars if (((star["5n_Favored"] == b"No*") or (star["5n_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5n_mar_per = [star["per"] for star in stars if ((star["5n_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5n_mar_a = [star["a"] for star in stars if ((star["5n_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5n_mar_k = [star["K"] for star in stars if ((star["5n_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	f5n_mar_mass = [star["PlanetMass"] for star in stars if ((star["5n_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, f5nam = plt.subplots()
 	f5nam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	f5nam.scatter(f5n_yes_a, f5n_yes_mass, label="Recovered", color="blue")
@@ -157,10 +157,11 @@ for minplanets, maxplanets in nplanets:
 	fn_no_a = [star["a"] for star in stars if ((star["fn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fn_no_k= [star["K"] for star in stars if ((star["fn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fn_no_mass = [star["PlanetMass"] for star in stars if ((star["fn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fn_mar_per = [star["per"] for star in stars if (((star["fn_Favored"] == b"No*") or (star["fn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fn_mar_a = [star["a"] for star in stars if (((star["fn_Favored"] == b"No*") or (star["fn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fn_mar_k = [star["K"] for star in stars if (((star["fn_Favored"] == b"No*") or (star["fn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
-	fn_mar_mass = [star["PlanetMass"] for star in stars if (((star["fn_Favored"] == b"No*") or (star["fn_Favored"] == b"Yes*")) and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fn_no_mass = [star["PlanetMass"] for star in stars if ((star["fn_Favored"] == b"No") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fn_mar_per = [star["per"] for star in stars if ((star["fn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fn_mar_a = [star["a"] for star in stars if ((star["fn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fn_mar_k = [star["K"] for star in stars if ((star["fn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
+	fn_mar_mass = [star["PlanetMass"] for star in stars if ((star["fn_Favored"] == b"Marginal") and (star["num"] >= minplanets) and (star["num"] <= maxplanets))]
 	fig, fnam = plt.subplots()
 	fnam.scatter(stars["a"], stars["PlanetMass"], color="gray", s=1)
 	fnam.scatter(fn_yes_a, fn_yes_mass, label="Recovered", color="blue")
