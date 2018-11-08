@@ -54,7 +54,10 @@ for i in np.arange(1,len(stars)):
 		for x in np.arange(1, planets+1):
 			star_config.write("anybasis_params['per"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["per"])+")\n")
 			star_config.write("anybasis_params['tp"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["t_p"])+")\n")
-			star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+			if (stars[i-x]["e"] < 0.5):
+				star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+			else:
+				star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value=0.499)\n")
 			star_config.write("anybasis_params['w"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["omega"])+")\n")
 			star_config.write("anybasis_params['k"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["K"])+")\n")
 		star_config.write("\nparams = anybasis_params.basis.to_any_basis(anybasis_params,fitting_basis)\n\n")
@@ -132,7 +135,10 @@ star_config.write("anybasis_params['jit_NEID'] = radvel.Parameter(value=0.0)\n")
 for x in np.arange(0, planets):
 	star_config.write("anybasis_params['per"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["per"])+")\n")
 	star_config.write("anybasis_params['tp"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["t_p"])+")\n")
-	star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+	if (stars[i-x]["e"] < 0.5):
+		star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+	else:
+		star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value=0.499)\n")
 	star_config.write("anybasis_params['w"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["omega"])+")\n")
 	star_config.write("anybasis_params['k"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["K"])+")\n")
 star_config.write("params = anybasis_params.basis.to_any_basis(anybasis_params,fitting_basis)\n\n")
