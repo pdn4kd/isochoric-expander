@@ -11,9 +11,9 @@ for i in np.arange(1,len(stars)):
 		planets = stars[i-1]["PlanetNumber"]
 		#start a new file
 		now = str((datetime.datetime.now()).isoformat())
-		star_config = open(star_name+"fp.py", 'w')
+		star_config = open(star_name+"65p.py", 'w')
 		star_config.write("# Test Keplerian fit configuration file for "+star_name+"\n")
-		star_config.write("# Features: All planets fit via period, tc, k; actual values for e, tc used (e can vary)\n")
+		star_config.write("# Features: All planets fit via period, tc, k; e capped at 0.65\n")
 		star_config.write("# Generated on "+now+"\n\n")
 		star_config.write("import os\n")
 		star_config.write("import pandas as pd\n")
@@ -54,7 +54,10 @@ for i in np.arange(1,len(stars)):
 		for x in np.arange(1, planets+1):
 			star_config.write("anybasis_params['per"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["per"])+")\n")
 			star_config.write("anybasis_params['tp"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["t_p"])+")\n")
-			star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+			if (stars[i-x]["e"] < 0.5):
+				star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+			else:
+				star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value=0.499)\n")
 			star_config.write("anybasis_params['w"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["omega"])+")\n")
 			star_config.write("anybasis_params['k"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["K"])+")\n")
 		star_config.write("\nparams = anybasis_params.basis.to_any_basis(anybasis_params,fitting_basis)\n\n")
@@ -77,7 +80,9 @@ for i in np.arange(1,len(stars)):
 		star_config.write("data['errvel'] = data.rvprec\n")
 		star_config.write("data['tel'] = 'NEID'\n\n")
 		star_config.write("priors = [\n")
-		star_config.write("    radvel.prior.EccentricityPrior( nplanets, upperlims=0.99),\n")
+		star_config.write("    radvel.prior.EccentricityPrior( nplanets, upperlims=0.65 ),\n")
+		for x in np.arange(1, planets+1):
+			star_config.write("    radvel.prior.Gaussian('per"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["per"][i-x])+", "+str(0.01*stars["per"][i-x])+"),\n")
 		star_config.write("    radvel.prior.PositiveKPrior( nplanets ),\n")
 		star_config.write("    radvel.prior.HardBounds('jit_NEID', 0.0, 15.0)\n")
 		star_config.write("]\n\n")
@@ -89,9 +94,9 @@ planets = stars[i]["PlanetNumber"]
 #start a new file
 now = str((datetime.datetime.now()).isoformat())
 star_name = stars[i]["HIPnumber"]
-star_config = open(star_name+"fp.py", 'w')
+star_config = open(star_name+"65p.py", 'w')
 star_config.write("# Test Keplerian fit configuration file for "+star_name+"\n")
-star_config.write("# Features: All planets fit via period, tc, k; actual values for e, tc used (e can vary)\n")
+star_config.write("# Features: All planets fit via period, tc, k; e capped at 0.65\n")
 star_config.write("# Generated on "+now+"\n\n")
 star_config.write("import os\n")
 star_config.write("import pandas as pd\n")
@@ -132,7 +137,10 @@ star_config.write("anybasis_params['jit_NEID'] = radvel.Parameter(value=0.0)\n")
 for x in np.arange(0, planets):
 	star_config.write("anybasis_params['per"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["per"])+")\n")
 	star_config.write("anybasis_params['tp"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["t_p"])+")\n")
-	star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+	if (stars[i-x]["e"] < 0.5):
+		star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["e"])+")\n")
+	else:
+		star_config.write("anybasis_params['e"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value=0.499)\n")
 	star_config.write("anybasis_params['w"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["omega"])+")\n")
 	star_config.write("anybasis_params['k"+str(stars["PlanetNumber"][i-x])+"'] = radvel.Parameter(value="+str(stars[i-x]["K"])+")\n")
 star_config.write("params = anybasis_params.basis.to_any_basis(anybasis_params,fitting_basis)\n\n")
@@ -155,7 +163,9 @@ star_config.write("data['mnvel'] = data.mnvel\n")
 star_config.write("data['errvel'] = data.rvprec\n")
 star_config.write("data['tel'] = 'NEID'\n\n")
 star_config.write("priors = [\n")
-star_config.write("    radvel.prior.EccentricityPrior( nplanets, upperlims=0.99),\n")
+star_config.write("    radvel.prior.EccentricityPrior( nplanets, upperlims=0.65 ),\n")
+for x in np.arange(1, planets+1):
+	star_config.write("    radvel.prior.Gaussian('per"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["per"][i-x])+", "+str(0.01*stars["per"][i-x])+"),\n")
 star_config.write("    radvel.prior.PositiveKPrior( nplanets ),\n")
 star_config.write("    radvel.prior.HardBounds('jit_NEID', 0.0, 15.0)\n")
 star_config.write("]\n\n")
