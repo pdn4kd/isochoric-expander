@@ -18,8 +18,8 @@ recovery_data_extraction.py takes the results of some of radvel's output files (
 
 error_plots.py generate error vs actual value plots for K, period, and (if available) e. This is in contrast to the recovery_plots.py which does period-K and a-m.
 
-9 fits are being considered at the moment: null, and [5,e,f,n][n,p]. null has all parameters fixed as a baseline. The rest fit semi-amplitude, period, and time of conjunction for all planets. e- fixes eccentricity at the 'known' value, while 5- and f- allow eccentricity to vary (capped at 0.5 and 0.99, respectively). n- fixes eccentricity at 0 (circular orbits). -p has all planets in the system, while -n drops the long period (currently >3654.0 days) ones, and fits an additional quadratic function for radial velocity. We are drifting towards 5p as the best fit given survey assumptions, and tests on recovery results.
+Currently 9 fits are being considered for testing properties: null, and [5,e,f,n][n,p]. null has all parameters fixed as a baseline. The rest fit semi-amplitude, period, and time of conjunction for all planets. e- fixes eccentricity at the 'known' value, while 5- and f- allow eccentricity to vary (capped at 0.5 and 0.99, respectively). n- fixes eccentricity at 0 (circular orbits). -p has all planets in the system, while -n drops the long period (currently >3654.0 days) ones, and fits an additional quadratic function for radial velocity. We are drifting towards 5p as the best fit given survey assumptions, and tests on recovery results.
 
-Addendum: We are shifting twards planets65.py, as that generates eccentricities better (max of 0.65, deals better with ones in excess of the limit)
+Addendum: We are shifting towards planets65.py, as that generates eccentricities better (max of 0.65, moves large inputs below the limit to prevent unpredictable radvel behavior).
 
 truncate.py Creates a bunch of chopped up surveys (5/10/20 year at 25/50/100% telescope time) given 20 year 100% time surveys.
