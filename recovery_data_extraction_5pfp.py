@@ -9,7 +9,7 @@ file_postfix = "5p" # note: columns = 2+(planets*parameters). 5p and fp have 4 p
 maxplanets = 10
 
 planetfits_results = open("planetfits_results"+file_postfix+".csv", 'w')
-planetfits_results.write("Star,num,PlanetNumber,"+file_postfix+"_per_min,"+file_postfix+"_per_mid,"+file_postfix+"_per_max,"+file_postfix+"_per_err_minus,"+file_postfix+"_per_err_plus,tc_min,tc_mid,tc_max,tc_err_minus,tc_err_plus,e_min,e_mid,e_max,e_err_minus,e_err_plus,"+file_postfix+"_K_min,"+file_postfix+"_K_mid,"+file_postfix+"_K_max,"+file_postfix+"_K_err_minus,"+file_postfix+"_K_err_plus\n")
+planetfits_results.write("Star,num,PlanetNumber,per_min_"+file_postfix+",per_mid_"+file_postfix+",per_max_"+file_postfix+",per_err_minus_"+file_postfix+",per_err_plus_"+file_postfix+",tc_min_"+file_postfix+",tc_mid_"+file_postfix+",tc_max_"+file_postfix+",tc_err_minus_"+file_postfix+",tc_err_plus_"+file_postfix+",e_min_"+file_postfix+",e_mid_"+file_postfix+",e_max_"+file_postfix+",e_err_minus_"+file_postfix+",e_err_plus_"+file_postfix+",K_min_"+file_postfix+",K_mid_"+file_postfix+",K_max_"+file_postfix+",K_err_minus_"+file_postfix+",K_err_plus\n")
 for i in np.arange(1,len(stars)):
 	if (star_name != stars[i]["HIPnumber"]):
 		if (stars[i-1]["PlanetNumber"] <= maxplanets):
