@@ -5,11 +5,11 @@ import os.path
 
 stars = np.genfromtxt("planets.csv", delimiter=',', names=True, dtype=("U23", "U9", int, float, float, float, float, float, float, float, float, float, float))
 star_name = stars[0]["HIPnumber"]
-file_postfix = "fp" # note: columns = 2+(planets*parameters). 5p and fp have 4 parameters, while ep and np have 3! ([5,e,f,n]n may have more like 5+(remaining_planets*parameters), and given the way planets are truncated can not be easily matched up)
+file_postfix = "5p" # note: columns = 2+(planets*parameters). 5p and fp have 4 parameters, while ep and np have 3! ([5,e,f,n]n may have more like 5+(remaining_planets*parameters), and given the way planets are truncated can not be easily matched up)
 maxplanets = 10
 
 planetfits_results = open("planetfits_results"+file_postfix+".csv", 'w')
-planetfits_results.write("Star,num,PlanetNumber,per_min,per_mid,per_max,per_err_minus,per_err_plus,tc_min,tc_mid,tc_max,tc_err_minus,tc_err_plus,e_min,e_mid,e_max,e_err_minus,e_err_plus,K_min,K_mid,K_max,K_err_minus,K_err_plus\n")
+planetfits_results.write("Star,num,PlanetNumber,"+file_postfix+"_per_min,"+file_postfix+"_per_mid,"+file_postfix+"_per_max,"+file_postfix+"_per_err_minus,"+file_postfix+"_per_err_plus,tc_min,tc_mid,tc_max,tc_err_minus,tc_err_plus,e_min,e_mid,e_max,e_err_minus,e_err_plus,"+file_postfix+"_K_min,"+file_postfix+"_K_mid,"+file_postfix+"_K_max,"+file_postfix+"_K_err_minus,"+file_postfix+"_K_err_plus\n")
 for i in np.arange(1,len(stars)):
 	if (star_name != stars[i]["HIPnumber"]):
 		if (stars[i-1]["PlanetNumber"] <= maxplanets):
