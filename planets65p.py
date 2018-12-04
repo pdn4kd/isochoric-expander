@@ -164,7 +164,7 @@ star_config.write("data['errvel'] = data.rvprec\n")
 star_config.write("data['tel'] = 'NEID'\n\n")
 star_config.write("priors = [\n")
 star_config.write("    radvel.prior.EccentricityPrior( nplanets, upperlims=0.65 ),\n")
-for x in np.arange(1, planets+1):
+for x in np.arange(0, planets):
 	star_config.write("    radvel.prior.Gaussian('per"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["per"][i-x])+", "+str(0.01*stars["per"][i-x])+"),\n")
 star_config.write("    radvel.prior.PositiveKPrior( nplanets ),\n")
 star_config.write("    radvel.prior.HardBounds('jit_NEID', 0.0, 15.0)\n")

@@ -19,7 +19,7 @@ for i in np.arange(1,len(stars)):
 				planets_columns = planets_pd.columns
 				#planetfits_results.write(star_name)
 				for x in np.arange(0, (len(planets_columns)-2)/4, 1):
-					planetfits_results.write(star_name+","+str(stars[i-1]["PlanetNumber"])+","+str(int((x+3)/4)))
+					planetfits_results.write(star_name+","+str(stars[i-1]["PlanetNumber"])+","+str(int(x+1)))
 					planetfits_results.write(","+str(planets_pd[planets_columns[int(x*3)+1]][0])+","+str(planets_pd[planets_columns[int(x*3)+1]][1])+","+str(planets_pd[planets_columns[int(x*3)+1]][2])) # per
 					planetfits_results.write(","+str(planets_pd[planets_columns[int(x*3)+1]][1]-planets_pd[planets_columns[int(x*3)+1]][0])+","+str(planets_pd[planets_columns[int(x*3)+1]][2]-planets_pd[planets_columns[int(x*3)+1]][1]))
 					planetfits_results.write(","+str((planets_pd[planets_columns[int(x*3)+1]][1]-planets_pd[planets_columns[int(x*3)+1]][0])/planets_pd[planets_columns[int(x*3)+1]][1])+","+str((planets_pd[planets_columns[int(x*3)+1]][2]-planets_pd[planets_columns[int(x*3)+1]][1])/planets_pd[planets_columns[int(x*3)+1]][1]))
