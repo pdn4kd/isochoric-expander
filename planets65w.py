@@ -11,9 +11,9 @@ for i in np.arange(1,len(stars)):
 		planets = stars[i-1]["PlanetNumber"]
 		#start a new file
 		now = str((datetime.datetime.now()).isoformat())
-		star_config = open(star_name+"65pw.py", 'w')
+		star_config = open(star_name+"65w.py", 'w')
 		star_config.write("# Test Keplerian fit configuration file for "+star_name+"\n")
-		star_config.write("# Features: All planets fit via period, tc, k; e capped at 0.65\n")
+		star_config.write("# Features: All planets fit via period, tc, k, w; e capped at 0.65\n")
 		star_config.write("# Generated on "+now+"\n\n")
 		star_config.write("import os\n")
 		star_config.write("import pandas as pd\n")
@@ -84,7 +84,6 @@ for i in np.arange(1,len(stars)):
 		for x in np.arange(1, planets+1):
 			star_config.write("    radvel.prior.Gaussian('per"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["per"][i-x])+", "+str(0.01*stars["per"][i-x])+"),\n")
 			star_config.write("    radvel.prior.HardBounds('w"+str(stars["PlanetNumber"][i-x])+"', 0.0, 2*np.pi),\n")
-			star_config.write("    radvel.prior.Gaussian('k"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["K"][i-x])+", "+str(0.01*stars["K"][i-x])+"),\n")
 		star_config.write("    radvel.prior.PositiveKPrior( nplanets ),\n")
 		star_config.write("    radvel.prior.HardBounds('jit_NEID', 0.0, 15.0)\n")
 		star_config.write("]\n\n")
@@ -98,7 +97,7 @@ now = str((datetime.datetime.now()).isoformat())
 star_name = stars[i]["HIPnumber"]
 star_config = open(star_name+"65w.py", 'w')
 star_config.write("# Test Keplerian fit configuration file for "+star_name+"\n")
-star_config.write("# Features: All planets fit via period, tc, k; e capped at 0.65\n")
+star_config.write("# Features: All planets fit via period, tc, k, w; e capped at 0.65\n")
 star_config.write("# Generated on "+now+"\n\n")
 star_config.write("import os\n")
 star_config.write("import pandas as pd\n")
@@ -166,10 +165,9 @@ star_config.write("data['errvel'] = data.rvprec\n")
 star_config.write("data['tel'] = 'NEID'\n\n")
 star_config.write("priors = [\n")
 star_config.write("    radvel.prior.EccentricityPrior( nplanets, upperlims=0.65 ),\n")
-for x in np.arange(1, planets+1):
+for x in np.arange(0, planets):
 	star_config.write("    radvel.prior.Gaussian('per"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["per"][i-x])+", "+str(0.01*stars["per"][i-x])+"),\n")
 	star_config.write("    radvel.prior.HardBounds('w"+str(stars["PlanetNumber"][i-x])+"', 0.0, 2*np.pi),\n")
-	star_config.write("    radvel.prior.Gaussian('k"+str(stars["PlanetNumber"][i-x])+"', "+str(stars["K"][i-x])+", "+str(0.01*stars["K"][i-x])+"),\n")
 star_config.write("    radvel.prior.PositiveKPrior( nplanets ),\n")
 star_config.write("    radvel.prior.HardBounds('jit_NEID', 0.0, 15.0)\n")
 star_config.write("]\n\n")
