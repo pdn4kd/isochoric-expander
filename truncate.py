@@ -22,9 +22,9 @@ for filename in filenames:
 		star10year100.write("obs_start,obs_end,duration,altitude,azimuth,exposures,photonprec,instprec,rvprec,rvmeas,mnvel\n")
 		for line in star:
 			if (line["obs_start"] < 2460677.29166667):
-				star5year100.write(str(line)[2:-1]+"\n")
+				star5year100.write(str(line)[1:-1]+"\n")
 			if (line["obs_start"] < 2462503.29166667):
-				star10year100.write(str(line)[2:-1]+"\n")
+				star10year100.write(str(line)[1:-1]+"\n")
 		star5year100.close()
 		star10year100.close()
 		
@@ -37,11 +37,11 @@ for filename in filenames:
 		np.random.shuffle(star)
 		starpos = np.arange(int(0.5*len(star)))
 		for line in starpos: # iterate over the first half of a random shuffle of our observations
-			star20year050.write(str(star[line])[2:-1]+"\n")
+			star20year050.write(str(star[line])[1:-1]+"\n")
 			if (star[line]["obs_start"] < 2460677.29166667):
-				star5year050.write(str(star[line])[2:-1]+"\n")
+				star5year050.write(str(star[line])[1:-1]+"\n")
 			if (star[line]["obs_start"] < 2462503.29166667):
-				star10year050.write(str(star[line])[2:-1]+"\n")
+				star10year050.write(str(star[line])[1:-1]+"\n")
 		star5year050.close()
 		star10year050.close()
 		star20year050.close()
@@ -55,11 +55,11 @@ for filename in filenames:
 		np.random.shuffle(star) # new shuffle so 25% is different from 50%
 		starpos = np.arange(int(0.25*len(star)))
 		for line in starpos:
-			star20year025.write(str(star[line])[2:-1]+"\n")
+			star20year025.write(str(star[line])[1:-1]+"\n")
 			if (star[line]["obs_start"] < 2460677.29166667):
-				star5year025.write(str(star[line])[2:-1]+"\n")
+				star5year025.write(str(star[line])[1:-1]+"\n")
 			if (star[line]["obs_start"] < 2462503.29166667):
-				star10year025.write(str(star[line])[2:-1]+"\n")
+				star10year025.write(str(star[line])[1:-1]+"\n")
 		star5year025.close()
 		star10year025.close()
 		star20year025.close()
